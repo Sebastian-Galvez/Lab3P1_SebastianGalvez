@@ -49,11 +49,12 @@ public class Lab3P1_SebastianGalvez {
                               System.out.println("Ingrese un numero mayor que 0");
                            }
                               else {
-                                      for(int i =0 ; i <= n ; i++){
+                                      for(int i =1 ; i <= n ; i++){
                                           mult1= (i * i + 3 * i + 1);
                                           mult2= (i + 2);
                                           mult3= (2 * i + 1);
                                           combinados= (mult1 + mult2)/mult3;
+                                          
                                           System.out.println("es:"+ combinados);
                                       }
                                       }  
@@ -65,7 +66,7 @@ public class Lab3P1_SebastianGalvez {
                            if( numero >= 7){
                                for (int i=1 ; i < numero ;i++){ 
                              for(int j=1 ; j < numero ; j++){                                 
-                                if(i==numero -1 || j==0 || i == j || i + j==numero  ){
+                                if(i==numero -1 || j==1 || i == j || i + j==numero  ){
                                     System.out.print("*");    
                                 }
                                 else{
