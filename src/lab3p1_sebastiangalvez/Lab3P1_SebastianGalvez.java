@@ -21,45 +21,57 @@ public class Lab3P1_SebastianGalvez {
         int opcion= leer.nextInt();
         while (opcion !=4){
             switch(opcion){
-                case 1:{ System.out.println("La puerta misteriosa");
-                    System.out.println("Inrgrese la cantidad de terminos: ");
-                            int i= leer.nextInt();
-                            if(i >= 1){                               
-                                for(i =1 ; i <= 1 ; i++){
-                                        System.out.println("3");
-                                      for(int h =2 ; h<= 2 ; h++){
-                                           System.out.println("0");
-                                           for(int m=3 ; m <= 3; m++){
-                                              System.out.println("2");
-                                           }
-                                        }
-                                }
-                            }
-                                System.out.println("Ingrese un numero mayor que 0"); 
-                                break;
-                }//Fin del 
-                case 2:{  System.out.println("Sumatoria");
-                           System.out.println("Ingrese el limite: ");
-                           int n= leer.nextInt();
-                           float mult1=0;
-                           float mult2=0;
-                           float mult3=0;
-                           float combinados=0;
-                           if (n < 0){
-                              System.out.println("Ingrese un numero mayor que 0");
-                           }
-                              else {
-                                      for(int i =1 ; i <= n ; i++){
-                                          mult1= (i * i + 3 * i + 1);
-                                          mult2= (i + 2);
-                                          mult3= (2 * i + 1);
-                                          combinados= (mult1 + mult2)/mult3;
-                                          
-                                          System.out.println("es:"+ combinados);
-                                      }
-                                      }  
-                           break;
+                case 1:  System.out.println("Ingrese la cantidad de terminos (N > 0) :");
+                int cantidad = leer.nextInt();
+                if (cantidad < 0) {
+                    System.out.println("Ingrese un numero mayor que 0: ");
+                    cantidad = leer.nextInt();
+                }else {
+                System.out.println("Resultado de la sucesion: ");   
+                int n1 = 3;
+                int n2 = 0;
+                int n3 = 2;
+                int suma;
+                for (int i = 0; i < cantidad; i=i+1) {
+                    if (i == 1) {
+                        System.out.println(n1);
+                    } else if (i == 2) {
+                        System.out.println(n2);
+                    } else if (i == 3) {
+                        System.out.println(n3);
+                    } else {
+                        suma = n1 + n2;
+                        System.out.println(suma);
+                        n1 = n2;
+                        n2 = n3;
+                        n3 = suma;
+                    }
+                } 
                 }
+            
+            break;
+                
+                case 2:{System.out.println("Ingrese el limite:(n)");
+                int limite = leer.nextInt();
+                double acum = 0;
+                double factorial;
+                if (limite > 0){
+                    for(int i=1; i<=limite; i=i+1){
+                        factorial = 1;
+                        for(int n=1; n<= 2*i+1; n=n+1){
+                            factorial = factorial*n;
+                        }
+                        double n1 =(i*i + 3*i + 1);
+                        double n2 = (i+2); 
+                        double resultado = (n1*n2)/factorial;
+                        acum = acum + resultado;
+                        System.out.printf("n=%d, suma = %f%n",i,acum);
+                    }   
+
+                }
+             }
+               break;
+                
                 case 3:{  System.out.println("Arco y flecha");
                            System.out.println("Ingrese un numero");
                            int numero= leer.nextInt();
@@ -79,6 +91,8 @@ public class Lab3P1_SebastianGalvez {
                            System.out.println("Ingrese un numero mayor que 7");
                     break;
                 }
+                default:
+                    
                 
                 }//Fin del 
             }//Fin del 
